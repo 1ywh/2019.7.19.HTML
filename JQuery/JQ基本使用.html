@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>JQ基本使用，点击按钮改变文本</title>
+	</head>
+	<script src="js/jquery-1.11.0.js"></script>
+	<script>
+	/**
+	 * 基本使用步骤:
+	 * 	1)导入js库,script
+	 *  2)确定页面载入事件
+	 *  3)确定具体事件的派发 (点击/失去焦点/获取焦点...)
+	 */
+	//等价于getEmlementById方法获取对象
+	$(function(){
+	//选中被点击的标签，嵌套一个方法
+	  $("#o").click(function(){
+	   //点击方法完成的内容改变div文本内容
+	   //JQ修改标签文本内容的方法：htnl("xxx");
+		//$("#p").html("cover");
+	$("#p").innerHTML="cover";
+		});	
+	});	
+	</script>
+	<body>
+	<!--点击这个按钮改变div文本内容-->
+	<input type="button" value="点击" id="o"/>
+	<div id="p">
+		change	
+	</div>
+	</body>
+</html>
