@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JQ隐藏，显示中的动画效果</title>
+	</head>
+	<script src ="js/jquery-1.11.0.js"></script>
+	<script>
+
+	/*
+	*属性:opacity:透明图(0:完全隐藏,1:完全显示)
+	*自定义动画效果:
+	*animate({width:"",基本属性(height,边框宽度大小),opacity:"0-1之间"},毫秒数)
+	*/
+	
+	//一、隐藏
+	//页面载入事件
+	$(function(){
+	//1.隐藏
+	//首先选中被点击的标签对象
+		$("#h").click(function(){
+		//选中要作用的标签img，隐藏
+			$("#img").hide(5000);
+		//sildeUp(毫秒值):由下到上的滑动隐藏
+			$("#img").slideUp(2000);
+		//淡出效果:
+			$("img").fadeOut(2000);
+		//自定义隐藏，属性:opacity:透明图(0:完全隐藏,1:完全显示)
+			$("img").amimate({width:"500px",opacity:"0.1"},2000);
+		});
+	});
+	//二、显示
+	$(function(){
+		$("#s").click(function(){
+		//5秒后显示图片
+			$("img").show(5000);
+		//滑动效果:sildeDown(毫秒值):由上到下的滑动显示
+			$("img").slideDown(2000);
+		//淡入的动画效果:返回值:jQueryfadeIn(speed/毫秒值)
+			$("img").fadeIn(2000);
+		//属性:opacity:透明图(0:完全隐藏,1:完全显示)
+		//自定义动画效果:
+		//animate({width:"",基本属性(height,边框宽度大小),opacity:"0-1之间"},毫秒数)
+			$("img").animate({width:"1000px",opacity:"0.2"},2000)
+		});	
+	});
+	</script>
+	<body>
+	<img src="1.jpg" id="img" width="50%" style="display: none"/>
+	<input type="button" value="hide" id="h"/>
+	<input type="button" value="show" id="s"/>
+	</body>
+</html>
