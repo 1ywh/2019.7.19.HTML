@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="js/jquery-1.11.0.js"></script>
+	<script>
+		//1.
+		function change(){
+			
+//	     //1.通过js来修改文本属性
+// 		 //通过文本的id获取当前要修改的标签对象
+//  	 //设置innerHTML属性来修改内容
+//			var p=document.getElementById("p");
+//			p.innerHTML="使用js对象改变文本内容";
+		//2.通过JQ来修改文本属性
+		//将js对象使用$(js对象)，变量名前面$,jquery对象
+		var $p=$(p);
+		$p.html("将js转换成Jquery对象改变内容");			
+		}
+		//页面载入事件
+		$(function(){
+			//给id="js"的input标签派发点击事件
+			$("#js").click(function(){
+				//1.id位p标签改变内容
+				$("#q").html("JQ对象来改文本内容");
+				
+				//2.直接Jquery：get方法：下标从0开始
+				//由于有俩个span标签，写的时候按照当前元素位置来写
+				var a=$("span").get(1);
+				a.innerHTML="将Jquery对象转换成Js对象改变内容";
+				
+			});		
+		});
+	</script>
+	<body>
+		<input type ="button" onclick=change()  value="js对象" />
+		<span id="p">js对象</span><br/>
+		<input type ="button" value="jquery对象" id="js"/>
+		<span id="q">jquery对象</span>
+	</body>
+</html>
