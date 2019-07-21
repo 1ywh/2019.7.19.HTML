@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="js/jquery-1.11.0.js"></script>
+	<script>
+	/**
+	 * 已进入当前网页,经过3秒后,弹出广告,在经过5秒之后,隐藏广告
+	 * 
+	*/
+	function show(){
+	//由上到下显示
+		$("#img").slideDown(3000);
+		setTimeout("hide()",5000);	
+	}
+	function hide(){
+	//由下到上隐藏
+		$("#img").slideUp(5000);
+		
+	}
+	$(function(){
+		setTimeout("show()",3000);
+	
+	});
+	</script>
+	<body>
+	<img src="1.jpg" id="img" style="display: none;"/>
+	</body>
+</html>
